@@ -12,11 +12,22 @@ namespace digtalClock
 {
     public partial class clock : Form
     {
+        Timer t = new Timer();
         public clock()
         {
             InitializeComponent();
         }
 
-        
+        private void clock_Load(object sender, EventArgs e)
+        {
+            t.Interval = 1000;
+            t.Tick += new EventHandler(this.t_Tick);
+            t.Start();
+        }
+
+        private void t_Tick(object sender, EventArgs )
+        {
+
+        }
     }
 }
